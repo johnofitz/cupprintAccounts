@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage
+    x:Class="cupprintAccounts.View.PopUpView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+    xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+    xmlns:viewmodel="clr-namespace:cupprintAccounts.ViewModel"
+    x:DataType="viewmodel:PopUpViewModel"
+   >
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            DurationIn="700"
+            EasingIn="SinIn"
+            PositionIn="Bottom"
+            PositionOut="Center"
+            ScaleIn="1"
+            ScaleOut="0.7" />
+    </mopups:PopupPage.Animation>
+
+
+
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <Border
+            BackgroundColor="GhostWhite"
+            HeightRequest="550"
+            HorizontalOptions="Center"
+            Stroke="LightBlue"
+            StrokeThickness="6"
+            WidthRequest="450">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="40" />
+            </Border.StrokeShape>
+            <VerticalStackLayout Padding="40" Spacing="3">
+                <Label
+                     Text="Review Column Mapping"
+                     Style="{StaticResource SubHeadline}"
+                     SemanticProperties.HeadingLevel="Level2"
+                     SemanticProperties.Description="Review Column Mapping" />
+                <Grid Margin="20" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource ModalLabelStyle}" Text="Job No" VerticalOptions="Center" />
+                    <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource EntryFrameStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Entry
+                            x:Name="job"
+                            HorizontalOptions="FillAndExpand"
+                             />
+                    </Frame>
+
+                    <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource ModalLabelStyle}" Text="Invoice No" VerticalOptions="Center" />
+                    <Frame Grid.Row="1" Grid.Column="1" Style="{StaticResource EntryFrameStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Entry
+                             x:Name="invoiceNo"
+                            HorizontalOptions="FillAndExpand"
+                            />
+                    </Frame>
+
+                    <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource ModalLabelStyle}" Text="Quantity" VerticalOptions="Center" />
+                    <Frame Grid.Row="2" Grid.Column="1" Style="{StaticResource EntryFrameStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Entry
+                              x:Name="quantity"
+                             HorizontalOptions="FillAndExpand"
+                             />
+                    </Frame>
+
+                    <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource ModalLabelStyle}" Text="Base Rate" VerticalOptions="Center" />
+                    <Frame Grid.Row="3" Grid.Column="1" Style="{StaticResource EntryFrameStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Entry
+                              x:Name="baseRate"
+                             HorizontalOptions="FillAndExpand"
+                             />
+                    </Frame>
+                    
+                    <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource ModalLabelStyle}" Text="Invoice Date" VerticalOptions="Center" />
+                    <Frame Grid.Row="4" Grid.Column="1" Style="{StaticResource EntryFrameStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Entry
+                              x:Name="invoiceDate"
+                             HorizontalOptions="FillAndExpand"
+                             />
+                    </Frame>
+                    
+                    <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource ModalLabelStyle}" Text="Download Date" VerticalOptions="Center" />
+                    <Frame Grid.Row="5" Grid.Column="1" Style="{StaticResource EntryFrameStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                        <Entry
+                              x:Name="downloadDate"
+                             HorizontalOptions="FillAndExpand"
+                             />
+                    </Frame>
+                </Grid>
+
+   
+                <Button
+                    Margin="10,5"
+                    BackgroundColor="#9eb2e0"
+                    CornerRadius="20"
+                    HorizontalOptions="Center" 
+                    Text="Reconcile Invoice"
+                    MaximumWidthRequest="150"
+                    Command="{Binding GoToInvoiceCommand}"
+                   
+                    VerticalOptions="EndAndExpand" />
+            </VerticalStackLayout>
+        </Border>
+    </ScrollView>
+</mopups:PopupPage>

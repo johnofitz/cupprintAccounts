@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="cupprintAccounts.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:cupprintAccounts.View"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    FlyoutBackgroundColor="White">
+    
+    <Shell.FlyoutHeader>
+        <Image Source="cupprint.png"
+               BackgroundColor="LightSteelBlue"
+               HeightRequest="120"
+               />
+        
+    </Shell.FlyoutHeader>
+
+    <ShellContent Title="Home"
+                  ContentTemplate="{DataTemplate local:HomePageView}"
+                  />
+
+    <!--<ShellContent
+        Title="UPS"
+        ContentTemplate="{DataTemplate local:HomePageView}"
+        Route="PopUp" />
+
+    <ShellContent
+        Title="STL"
+        ContentTemplate="{DataTemplate local:HomePageView}"
+        Route="HomePage" />
+
+    <ShellContent
+        Title="Eoin Gavin"
+        ContentTemplate="{DataTemplate local:HomePageView}"
+        Route="HomePage" />
+
+    <ShellContent
+        Title="DB Schenker"
+        ContentTemplate="{DataTemplate local:HomePageView}"
+        Route="HomePage" />-->
+
+</Shell>

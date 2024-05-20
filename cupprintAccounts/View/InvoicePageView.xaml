@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:cupprintAccounts.ViewModel"
+             x:DataType="viewmodel:InvoiceViewModel"
+             x:Class="cupprintAccounts.View.InvoicePageView">
+    
+    <VerticalStackLayout>
+
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label
+                Text="Generating Table, please wait..."
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                FontSize="18"
+                TextColor="Orange" />
+            <ActivityIndicator
+                Color="Orange"
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center" />
+    
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

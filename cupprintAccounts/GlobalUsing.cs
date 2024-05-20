@@ -1,0 +1,12 @@
+﻿global using CommunityToolkit.Mvvm.ComponentModel;
+global using System.Runtime.CompilerServices;
+global using System.Collections.ObjectModel;
+global using CommunityToolkit.Mvvm.Input;
+global using System.ComponentModel;
+global using System.Diagnostics;
+global using cupprintAccounts.ViewModel;
+global using cupprintAccounts.View;
+global using cupprintAccounts.Model;
+global using cupprintAccounts.Services;
+global using System.Text.Json;
+global using CommunityToolkit.Maui;

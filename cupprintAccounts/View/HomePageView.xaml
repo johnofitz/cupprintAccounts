@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:cupprintAccounts.ViewModel"
+             x:DataType="viewmodel:HomePageViewModel"
+             x:Class="cupprintAccounts.View.HomePageView"
+             Title="{Binding Heading}">
+    
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Padding="100,100,100,100"
+            Spacing="25">
+
+            <Label
+                 Text="Welcome to Cupprint Accounts"
+                 Style="{StaticResource SubHeadline}"
+                 SemanticProperties.HeadingLevel="Level2"
+                 SemanticProperties.Description="Welcome to Cupprint Accounts" />
+            
+            
+            <Frame Style="{StaticResource DropFrameStyle}">
+                <Picker x:Name="picker"
+                    MaximumWidthRequest="400"
+                    Title="Select Invoice Type"
+                    ItemsSource="{Binding InvoiceCompany}"
+                    SelectedItem="{Binding SelectedCompany, Mode=TwoWay}">
+                    
+                </Picker>
+            </Frame>
+        
+            <Frame Style="{StaticResource MainFrameStyle}">
+                <Entry
+                   
+                Placeholder="Select File Path"
+                Text="{Binding SelectedPath, Mode=TwoWay}"
+                x:Name="filepath"
+                HorizontalOptions="FillAndExpand"
+                />
+            </Frame>
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,50,0,0">
+                <Button
+                    Text="Upload" 
+                    CornerRadius="15"
+                    Margin="0,0,10,0"
+                    Command="{Binding GetFilePathCommand}"
+                    BackgroundColor="#FFC107"
+                    MinimumWidthRequest="120"
+                    HorizontalOptions="Center" />
+                <Button
+                    Text="Submit"
+                    CornerRadius="15"
+                    MinimumWidthRequest="120"
+                    Command="{Binding GoToSelectionCommand}"
+                    BackgroundColor="Green"
+                    HorizontalOptions="Center" />
+            </StackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
