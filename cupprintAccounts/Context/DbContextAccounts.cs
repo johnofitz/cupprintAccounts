@@ -8,7 +8,7 @@ namespace cupprintAccounts.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer("Data Source=IEENN-MARS\\SAGE200;Initial Catalog=Thardata;User ID=tharUser;Password=tharUSER;Encrypt=False");
+            optionsBuilder.UseSqlServer("Data Source=IEENN-MARS\\SAGE200;Initial Catalog=*****;**** ID=tharUser;Password=*****;Encrypt=False");
         }
 
         public DbSet<UpsRateCard> UpsRateCard { get; set; }
